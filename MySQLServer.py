@@ -1,5 +1,4 @@
 import mysql.connector
-from mysql.connector import Error
 
 try:
     # Try to connect to the MySQL server
@@ -16,9 +15,9 @@ try:
         mycursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
         print("Database 'alx_book_store' created successfully!")
 
-except Error as e:
+except mysql.connector.Error as err:
     # Handle connection or execution errors
-    print(f"Error while connecting to MySQL: {e}")
+    print(f"Error while connecting to MySQL: {err}")
 
 finally:
     # Ensure proper closure of cursor and connection
@@ -29,5 +28,3 @@ finally:
             mydb.close()
     except NameError:
         pass
-
-
