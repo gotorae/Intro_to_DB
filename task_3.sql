@@ -1,5 +1,5 @@
 # Make sure you are using the database
-mycursor.execute("USE alx_book_store")
+mycursor.execute("USE alx_book_store;")
 
 # List all tables
 mycursor.execute("SHOW TABLES")
